@@ -84,6 +84,7 @@ contract Dex is ERC20{
         require(success);
     }
 
+    // uses the constant ratio to calculate swap output based on AMM model
     function getOutput(uint256 inputAmount, uint256 inputReserve, uint256 outputReserve) public pure returns (uint256) {
         require(inputReserve > 0 && outputReserve > 0);
         uint256 inputAmountWithFee = inputAmount * 99;
